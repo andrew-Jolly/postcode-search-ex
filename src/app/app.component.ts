@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { NgpDescription, NgpFormControl, NgpFormField, NgpLabel } from 'ng-primitives/form-field';
+import { map, tap } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -12,13 +15,27 @@ import { NgpDescription, NgpFormControl, NgpFormField, NgpLabel } from 'ng-primi
         NgpLabel,
         NgpDescription,
         NgpFormControl,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonModule
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     postcode = new FormControl<string>('');
+
+    constructor(private httpClient: HttpClient) {}
+
+    ngOnInit(): void {
+        // TODO - add search service
+        const endpoint = 'https://postcodes.io/postcodes/BT53 7HX'
+        this.httpClient.get(encodeURI(endpoint)).pipe(
+            map((res: any) => res.result)
+        ).subscribe({
+            next: (res) => console.log(res),
+            error: (error) => console.log(error)
+        })
+    }
 
     // mock response
     // {
