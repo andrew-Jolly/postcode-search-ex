@@ -1,8 +1,14 @@
 <div class="search-input-container">
-    <label ngpLabel>Postcode</label>
-    <p ngpDescription>Enter the postcode that you are interested in and click search</p>
-    <input ngpFormControl type="text" placeholder="Enter postcode" 
+    <div id="postcodeLabel" ngpLabel>Postcode</div>
+    <p id="description" ngpDescription>Enter a postcode that you are interested in and click search. The postcode must have both the outcode and incode e.g. NT1 2FG.</p>
+    <input ngpFormControl type="text" placeholder="Enter postcode"
+        for="postcodeLabel"
+        aria-label="postcode"
+        aria-describedby="description"
         [formControl]="postcode" />
+    <button ngpButton (click)="onSearchBtnClick()" [disabled]="!postcode.valid">SEARCH</button>
 </div>
+
+<p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
 
 <app-result *ngIf="result" [postcodeData]="result"></app-result>
