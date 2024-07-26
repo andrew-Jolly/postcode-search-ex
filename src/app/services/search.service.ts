@@ -5,12 +5,12 @@ import { map, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SearchServiceService {
-    constructor(private httpClient: HttpClient) {}
+export class SearchService {
+    constructor(private _httpClient: HttpClient) {}
 
     getPostcode(code: string): Observable<PostcodeData> {
         const endpoint = `https://postcodes.io/postcodes/${code}`
-        return this.httpClient.get<SearchResult>(endpoint).pipe(
+        return this._httpClient.get<SearchResult>(endpoint).pipe(
             map((res: SearchResult) => res.result)
         )
     }

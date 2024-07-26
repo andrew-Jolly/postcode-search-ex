@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 15px;
+}
+
+.field-container {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.label {
+    flex: 1;
+    text-align: right;
+    color: #71717A;
+}
+
+.value {
+    flex: 1;
+}
+
+.sub-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 10px;
+}

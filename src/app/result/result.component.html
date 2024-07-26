@@ -1,0 +1,146 @@
+<div class="field-container">
+    <div class="label">Postcode</div>
+    <div class="value">{{ postcodeData.postcode }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Outcode</div>
+    <div class="value">{{ postcodeData.outcode }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Incode</div>
+    <div class="value">{{ postcodeData.incode }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Positional Quality</div>
+    <div class="value">{{ postcodeData.quality }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Longitude</div>
+    <div class="value">{{ postcodeData.longitude }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Latitude</div>
+    <div class="value">{{ postcodeData.latitude }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Eastings</div>
+    <div class="value">{{ postcodeData.eastings }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Northings</div>
+    <div class="value">{{ postcodeData.northings }}</div>
+</div>
+
+<div class="field-container">
+    <div class="label">Country</div>
+    <div class="value">{{ postcodeData.country }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.admin_county">
+    <div class="label">County</div>
+    <div class="value">{{ postcodeData.admin_county }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.admin_district">
+    <div class="label">District</div>
+    <div class="value">{{ postcodeData.admin_district }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.admin_ward">
+    <div class="label">Ward</div>
+    <div class="value">{{ postcodeData.admin_ward }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.nhs_ha">
+    <div class="label">Strategic Health Authority</div>
+    <div class="value">{{ postcodeData.nhs_ha }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.parliamentary_constituency">
+    <div class="label">Westminster Parliamentary Constituency</div>
+    <div class="value">{{ postcodeData.parliamentary_constituency }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.european_electoral_region">
+    <div class="label">European Electoral Region</div>
+    <div class="value">{{ postcodeData.european_electoral_region }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.primary_care_trust">
+    <div class="label">Primary Care Trust</div>
+    <div class="value">{{ postcodeData.primary_care_trust }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.region">
+    <div class="label">Region</div>
+    <div class="value">{{ postcodeData.region }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.lsoa">
+    <div class="label">Lower Layer Super Output Area</div>
+    <div class="value">{{ postcodeData.lsoa }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.msoa">
+    <div class="label">Middle Layer Super Output Area</div>
+    <div class="value">{{ postcodeData.msoa }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.ccg">
+    <div class="label">CCG</div>
+    <div class="value">{{ postcodeData.ccg }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.nuts">
+    <div class="label">International Terratorial Level</div>
+    <div class="value">{{ postcodeData.nuts }}</div>
+</div>
+
+<!-- CODES -->
+<div class="sub-header">Codes</div>
+<div class="field-container" *ngIf="postcodeData.codes.admin_district">
+    <div class="label">District</div>
+    <div class="value">{{ postcodeData.codes.admin_district }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.admin_county">
+    <div class="label">County</div>
+    <div class="value">{{ postcodeData.codes.admin_county }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.admin_ward">
+    <div class="label">Ward</div>
+    <div class="value">{{ postcodeData.codes.admin_ward }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.parish">
+    <div class="label">Parish</div>
+    <div class="value">{{ postcodeData.codes.parish }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.ccg">
+    <div class="label">CCG</div>
+    <div class="value">{{ postcodeData.codes.ccg }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.nuts">
+    <div class="label">NUTS</div>
+    <div class="value">{{ postcodeData.codes.nuts }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.lau2">
+    <div class="label">LAU2</div>
+    <div class="value">{{ postcodeData.codes.lau2 }}</div>
+</div>
+
+<div class="field-container" *ngIf="postcodeData.codes.lsoa">
+    <div class="label">LSOA</div>
+    <div class="value">{{ postcodeData.codes.lsoa }}</div>
+</div>

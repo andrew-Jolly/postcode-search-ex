@@ -1,5 +1,6 @@
 :host {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -7,12 +8,14 @@
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     overflow-y: auto;
+    color: #303030;
 }
 
 .search-input-container {
     max-width: 400px;
     width: 100%;
     padding: 10px;
+    margin-left: 5px;
 }
   
 [ngpFormField] {
@@ -23,9 +26,9 @@
 }
   
 [ngpFormControl] {
-    height: 36px;
+    height: 32px;
     width: 90%;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 0 16px;
     border: none;
     box-shadow:
@@ -39,11 +42,11 @@
 }
   
 [ngpFormControl]::placeholder {
-    color: rgb(161 161 170);
+    color: #A1A1AA;
 }
   
 [ngpLabel] {
-    color: rgb(9 9 11);
+    color: #303030;
     font-size: 0.875rem;
     line-height: 1.25rem;
     font-weight: 500;
@@ -51,7 +54,7 @@
 }
   
 [ngpDescription] {
-    color: rgb(113 113 122);
+    color: #71717A;
     font-size: 0.75rem;
     line-height: 1rem;
     margin: 0 0 4px;
@@ -59,7 +62,7 @@
   
 [ngpError] {
     display: none;
-    color: rgb(239 68 68);
+    color: #EF4444;
     font-size: 0.75rem;
     line-height: 1rem;
     margin: 0;
