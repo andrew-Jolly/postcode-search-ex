@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { PostcodeData } from '../services/search.service';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
     standalone: true,
     imports: [CommonModule],
     templateUrl: './result.component.html',
-    styleUrl: './result.component.css'
+    styleUrl: './result.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResultComponent {
     @Input() postcodeData: PostcodeData;
