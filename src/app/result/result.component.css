@@ -6,6 +6,7 @@
     max-width: 600px;
     margin-top: 10px;
     padding-bottom: 30px;
+    font-size: 0.9rem;
 }
 
 .field-container {
@@ -26,7 +27,7 @@
 }
 
 .sub-header {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     margin-top: 10px;
 }

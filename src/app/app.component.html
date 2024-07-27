@@ -1,9 +1,8 @@
 <div class="search-input-container">
-    <div id="postcodeLabel" ngpLabel>Postcode</div>
-    <p id="description" ngpDescription>Enter a postcode that you are interested in and click search. The postcode must have both the outcode and incode e.g. LS11 0ES.</p>
+    <div id="postcodeLabel" ngpLabel>Postcode Search</div>
+    <p id="description" ngpDescription>Enter a postcode that you are interested in and click 'Search'. Ensure the postcode includes both the outcode and incode (e.g. LS11 0ES).</p>
     <input ngpFormControl type="text" placeholder="Enter postcode"
-        for="postcodeLabel"
-        aria-label="postcode"
+        aria-label="postcode search"
         aria-describedby="description"
         [formControl]="postcodeInput" />
     <button ngpButton (click)="onSearchBtnClick()" [disabled]="!postcodeInput.valid">SEARCH</button>

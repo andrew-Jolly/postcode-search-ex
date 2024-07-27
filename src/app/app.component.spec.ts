@@ -1,15 +1,16 @@
-import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SearchService } from './services/search.service';
 import { DestroyRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { NgpButton } from 'ng-primitives/button';
 import { NgpFormField, NgpLabel, NgpDescription, NgpFormControl } from 'ng-primitives/form-field';
 import { ResultComponent } from './result/result.component';
 import { of, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
     let component: AppComponent;
@@ -81,6 +82,7 @@ describe('AppComponent', () => {
                 NgpButton
             ],
             providers: [
+                Title,
                 DestroyRef,
                 { provide: SearchService, useValue: mockSearchService }
             ]

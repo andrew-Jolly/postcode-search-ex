@@ -8,6 +8,7 @@ import { ResultComponent } from "./result/result.component";
 import { NgpButton } from 'ng-primitives/button';
 import { HttpErrorResponse } from '@angular/common/http';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-root',
@@ -28,21 +29,20 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-    postcodeInput = new FormControl<string>('', [Validators.required, Validators.minLength(6)]);
+    postcodeInput = new FormControl<string>('', [Validators.required, Validators.minLength(6), this.noWhitespaceValidator]);
     result: PostcodeData;
     errorMessage: string;
 
     constructor(
+        private _title: Title,
         private _searchService: SearchService,
         private _destroyRef: DestroyRef
     ) {
+        this._title.setTitle('Postcode Search');
         this.postcodeInput.valueChanges.pipe(
             takeUntilDestroyed(this._destroyRef)
         ).subscribe(() => this.errorMessage = null);
     }
-
-    // TODO 
-    // WHITE SPACE CUSTOM VALIDATOR
 
     onSearchBtnClick(): void {
         this.result = null;
@@ -62,5 +62,9 @@ export class AppComponent {
         else {
             this.errorMessage = "There was an error fetching the postcode data. Please try again.";
         }
+    }
+
+    private noWhitespaceValidator(control: FormControl<string>): { 'whitespace': boolean } {
+        return (control.value || '').trim().length === 0 ? { 'whitespace': true } : null;
     }
 }

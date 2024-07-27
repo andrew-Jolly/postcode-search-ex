@@ -8,12 +8,12 @@
     overflow-x: hidden;
     overflow-y: auto;
     color: #303030;
-    padding-top: 30px;
+    padding-top: 1rem;
 }
 
 .search-input-container {
     max-width: 400px;
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin-left: 5px;
 }
@@ -27,7 +27,7 @@
   
 [ngpFormControl] {
     height: 32px;
-    width: 90%;
+    width: 87%;
     border-radius: 4px;
     padding: 0 16px;
     border: none;
@@ -38,7 +38,7 @@
 }
   
 [ngpFormControl]:focus {
-    border: solid 2px #00abcd;
+    box-shadow: 0 0 0 1px #00abcd;
 }
   
 [ngpFormControl]::placeholder {
@@ -54,6 +54,7 @@
 }
   
 [ngpDescription] {
+    width: 95%;
     color: #71717A;
     font-size: 0.75rem;
     line-height: 1rem;
@@ -69,10 +70,8 @@
 
 [ngpButton] {
     cursor: pointer;
-    width: 98%;
+    width: 95%;
     margin-top: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
     border-radius: 4px;
     color: #fff;
     border: none;
