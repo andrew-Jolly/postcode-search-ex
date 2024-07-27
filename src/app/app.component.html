@@ -1,12 +1,12 @@
 <div class="search-input-container">
     <div id="postcodeLabel" ngpLabel>Postcode</div>
-    <p id="description" ngpDescription>Enter a postcode that you are interested in and click search. The postcode must have both the outcode and incode e.g. NT1 2FG.</p>
+    <p id="description" ngpDescription>Enter a postcode that you are interested in and click search. The postcode must have both the outcode and incode e.g. LS11 0ES.</p>
     <input ngpFormControl type="text" placeholder="Enter postcode"
         for="postcodeLabel"
         aria-label="postcode"
         aria-describedby="description"
-        [formControl]="postcode" />
-    <button ngpButton (click)="onSearchBtnClick()" [disabled]="!postcode.valid">SEARCH</button>
+        [formControl]="postcodeInput" />
+    <button ngpButton (click)="onSearchBtnClick()" [disabled]="!postcodeInput.valid">SEARCH</button>
 </div>
 
 <p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>

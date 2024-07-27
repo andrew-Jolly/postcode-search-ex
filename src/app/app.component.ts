@@ -28,7 +28,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     styleUrl: './app.component.css'
 })
 export class AppComponent {
-    postcode = new FormControl<string>('', [Validators.required, Validators.minLength(6)]);
+    postcodeInput = new FormControl<string>('', [Validators.required, Validators.minLength(6)]);
     result: PostcodeData;
     errorMessage: string;
 
@@ -36,17 +36,20 @@ export class AppComponent {
         private _searchService: SearchService,
         private _destroyRef: DestroyRef
     ) {
-        this.postcode.valueChanges.pipe(
+        this.postcodeInput.valueChanges.pipe(
             takeUntilDestroyed(this._destroyRef)
-        ).subscribe(() => this.errorMessage = null)
+        ).subscribe(() => this.errorMessage = null);
     }
+
+    // TODO 
+    // WHITE SPACE CUSTOM VALIDATOR
 
     onSearchBtnClick(): void {
         this.result = null;
-        this._searchService.getPostcode(this.postcode.value.trim()).subscribe({
+        this._searchService.getPostcode(this.postcodeInput.value.trim()).subscribe({
             next: (postcodeData: PostcodeData) => {
                 this.result = postcodeData;
-                this.postcode.setValue('');
+                this.postcodeInput.setValue('');
             },
             error: (error) => this.handleError(error)
         });
@@ -54,10 +57,10 @@ export class AppComponent {
 
     private handleError(error: HttpErrorResponse): void {
         if (error.status === 404) {
-            this.errorMessage = "The postcode you entered is invalid. Please try again."
+            this.errorMessage = "The postcode you entered is invalid. Please try again.";
         }
         else {
-            this.errorMessage = "There was an error fetching the postcode data. Please try again."
+            this.errorMessage = "There was an error fetching the postcode data. Please try again.";
         }
     }
 }
